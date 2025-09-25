@@ -1,3 +1,4 @@
+from data import produits , prix
 # Associer chaque prix avec son prix
 def associer(produits,prix):
     return list(zip(produits,prix))
@@ -33,6 +34,7 @@ def sort_prix(produits_prix):
     return produits_prix
 
 
+
 # from list to tuple
 def to_tuple(produits_prix):
     return tuple(produits_prix)
@@ -59,3 +61,25 @@ def produit_min_price(produits_prix):
             produite_with_min_price = produit
 
     return produite_with_min_price
+
+# q1
+def recherch_par_nom(produits_prix):
+    name = input("enter le nom de produite")
+    for produit in produits_prix:
+        if produit[0].lower() == name.lower():
+            print(f"{produit[0]} cout {produit[1]} DH")
+
+
+# q2
+
+def ajouter_produit():
+    nom_produit = input("enter le nom de produit : ")
+    prix_produit = int(input("enter le prix de produit :"))
+
+    produits.append(nom_produit)
+    prix.append(prix_produit)
+
+    print(associer(produits,prix))
+
+
+
